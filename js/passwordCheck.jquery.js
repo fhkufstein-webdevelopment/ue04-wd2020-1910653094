@@ -40,6 +40,13 @@ function PasswordChecker(wrapperId, passwordInputFieldId, passwordSubmitButtonId
         that.check();
     });
 
+    /*Ab Zeile 24 sind die Methoden anders:
+        .blur anstatt .onblur
+        .keydown anstatt .onkeyup
+        .focus anstatt .onfocus
+        .onclick anstatt .click
+     */
+
 
 
     this.check = function() {
@@ -60,6 +67,8 @@ function PasswordChecker(wrapperId, passwordInputFieldId, passwordSubmitButtonId
                 this.wrapperField.removeClass(this.warningClass + ' ' + this.successClass).addClass(this.errorClass);
                 this.passwordSubmitButton.attr('disabled', true);
             }
+
+            /* Die Anweisungen in den if-Schleifen sind anders*/
 
 
         } else {
